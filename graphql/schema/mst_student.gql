@@ -1,0 +1,55 @@
+
+
+type MstStudent {
+  id: ID!
+  first_name:       String!
+  middle_name:      String!
+  last_name:        String!
+  std_studying:     Boolean!
+  std_status:       String!
+  std_sex:          String!
+  std_reg_no:       String!
+  std_adm_no:       String!
+  std_doa:          Time!
+  std_fresher:      Boolean!
+  std_dob:          Time!
+  std_email:        String!
+  std_mobile:       String!
+  std_father_name:  String!
+  std_mother_name:  String!
+
+ 
+
+}
+
+input CreateMstStudentInput {
+  first_name:         String!
+  middle_name:        String
+  last_name:          String
+  std_studying:       Boolean
+  std_status:         String
+  std_sex:            String
+  std_reg_no:         String
+  std_adm_no:         String
+  std_doa:            Time
+  std_fresher:        Boolean
+  std_dob:            Time!
+  std_email:          String
+  std_mobile:         String
+  std_father_name:    String
+  std_mother_name:    String
+
+
+}
+
+
+
+extend type Query {
+  GetStudents: [MstStudent!]!
+
+
+}
+
+extend type Mutation {
+  AddStudent(input: CreateMstStudentInput!): MstStudent!
+}
